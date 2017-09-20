@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing App jsx using jest Should generate snapshot and test 1`] = `
+<div>
+  <div>
+     list of toDos
+    <ul>
+      <li>
+         
+        <div>
+          First toDoText
+        </div>
+         
+      </li>
+      <li>
+         
+        <div>
+          second toDoText
+        </div>
+         
+      </li>
+      <li>
+         
+        <div>
+          third toDoText
+        </div>
+         
+      </li>
+      <li>
+         
+        <div>
+          fourth toDoText
+        </div>
+         
+      </li>
+      <li>
+         
+        <div>
+          fifth toDoText
+        </div>
+         
+      </li>
+    </ul>
+    <button
+      onClick={undefined}
+    >
+       Add New To Do 
+    </button>
+  </div>
+</div>
+`;
