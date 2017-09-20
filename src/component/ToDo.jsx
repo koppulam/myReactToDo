@@ -7,14 +7,17 @@ class ToDo extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<li  onClick={this.props.onClick} style={{
+      textDecoration: this.props.myTodo.completed ? 'line-through' : 'none'
+    }}>
 				{this.props.myTodo.toDoText}
-			</div>)
+			</li>)
 	}
 }
 
 ToDo.propTypes = {
-	myTodo : React.PropTypes.string.isRequired
+	myTodo : React.PropTypes.object.isRequired,
+	onClick: React.PropTypes.func.isRequired
 }
 
 export default ToDo;

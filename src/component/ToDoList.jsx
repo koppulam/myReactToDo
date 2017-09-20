@@ -1,43 +1,36 @@
 import React from 'react'
 import ToDo from './ToDo.jsx'
 import data from '../data/data.json'
+import VisibleTodoList from '../containers/ToDoListContainer'
 
 class ToDoList extends React.Component {
 
 	constructor() {
 		super()
-		this.addToDo = this.addToDo.bind(this);
-		this.showNewToDo = this.showNewToDo.bind(this);
 	}
 
-
-	addToDo() {
-
-	}
-
-	showNewToDo() {
-
-	}
-
-	componentDidMount() {
-
-	}
-
-
+	
 	render () {
-		var toDos = data;// ["one", "toe", "three"];
+		//var toDos = data;// ["one", "toe", "three"];
+		var toDos = this.props.todos;
+
 		return (
 			<div> list of toDos 
 				<ul>
 					{ toDos.map(item => {
-						return <li> <ToDo key={item.id} myTodo={item} /> </li>
+						return <ToDo  key={item.id}  myTodo={item} onClick={() => {this.props.onTodoClick(item.id)}} />
 					})
 				}
 				</ul>
-				<button onClick={this.showNewToDo()}> Add New To Do </button>
+				
 			</div>
 			)
 	}
 }
 
-export default ToDoList;
+ToDoList.propTypes = {
+	todos: React.PropTypes.array.isRequired,
+	onTodoClick: React.PropTypes.func.isRequired
+}
+
+export default VisibleTodoList(ToDoList);

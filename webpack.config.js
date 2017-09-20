@@ -1,5 +1,7 @@
 var config = {
-   entry: './src/main.js',
+   //entry: './src/main.js',
+
+   entry: './src/newmain.js',
 	
    output: {
       path:'/',
